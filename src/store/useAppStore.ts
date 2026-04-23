@@ -28,6 +28,8 @@ interface State {
   reportingEndDate: string;
   reportingEmployee: string;
   reportingRole: string;
+  reportingAddress: string;
+  reportingHashtag: string;
   vacancyYear: number;
   vacancyMonth: string;
   listSubTab: 'Detailed' | 'Summed days';
@@ -66,7 +68,7 @@ interface State {
   setTimesheetYear: (y: number) => void;
   setSelectedTimesheetEmployee: (id: number) => void;
   setReportingSubTab: (t: 'Detailed report' | 'Summed report') => void;
-  setReportingFilter: (k: 'reportingEmployee'|'reportingRole'|'reportingStartDate'|'reportingEndDate', v: string) => void;
+  setReportingFilter: (k: 'reportingEmployee'|'reportingRole'|'reportingAddress'|'reportingHashtag'|'reportingStartDate'|'reportingEndDate', v: string) => void;
   setVacancyYear: (y: number) => void;
   setVacancyMonth: (m: string) => void;
   navigateVacancyMonth: (dir: 'prev' | 'next') => void;
@@ -106,6 +108,8 @@ export const useAppStore = create<State>()(devtools((set, get) => ({
   reportingEndDate: '2026-03-27',
   reportingEmployee: '',
   reportingRole: '',
+  reportingAddress: '',
+  reportingHashtag: '',
   vacancyYear: 2026,
   vacancyMonth: 'March',
   listSubTab: 'Detailed',
